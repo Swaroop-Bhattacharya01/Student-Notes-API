@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="row" style="align-items:center; margin-bottom:16px;">
+    <a class="btn secondary" href="/">← Back</a>
+    <div style="flex:1"></div>
+    <a class="btn" href="/note/{{ note.id }}/edit">Edit</a>
+  </div>
+  <div class="card">
+    <h2 style="margin-top:0;">{{ note.title }}</h2>
+    <div class="muted" style="margin-bottom:12px;">Tags: {{ ', '.join(note.tags or []) }}</div>
+    <pre style="white-space:pre-wrap; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;">{{ note.content }}</pre>
+    {% if note.attachments %}
+      <div style="margin-top:16px">
+        <div class="muted" style="margin-bottom:8px;">Attachments</div>
+        <ul>
+          {% for a in note.attachments %}
+            <li><a class="btn secondary" href="/uploads/{{ a.file }}" target="_blank">{{ a.original }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+  </div>
+{% endblock %}
+
+

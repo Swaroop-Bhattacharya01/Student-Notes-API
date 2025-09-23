@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block content %}
+  <!-- index-template-v2 -->
+  <div class="row" style="align-items:center; margin-bottom:16px;">
+    <div class="grow">
+      <form method="get" action="/">
+        <div class="row">
+          <input class="grow" type="text" name="search" placeholder="Search title or content" value="{{ request.args.get('search','') }}" />
+          <input class="grow" type="text" name="tag" placeholder="Filter by tag" value="{{ request.args.get('tag','') }}" />
+          <button class="btn" type="submit">Filter</button>
+          <a class="btn secondary" href="/">Clear</a>
+        </div>
+      </form>
+    </div>
+    <div>
+      <a class="btn" href="/new">+ New Note</a>
+    </div>
+  </div>
+
+  {% if notes %}
+  <div class="card">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Tags</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for n in notes %}
+        <tr>
+          <td>{{ n.id }}</td>
+          <td><a href="{{ url_for('ui_view_note', id=n.id) }}">{{ n.title }}</a></td>
+          <td class="muted">{{ ', '.join(n.tags or []) }}</td>
+          <td>
+            <a class="btn secondary" href="{{ url_for('ui_edit_note', id=n.id) }}">Edit</a>
+            <form method="post" action="{{ url_for('ui_delete_note', id=n.id) }}" style="display:inline" onsubmit="return confirm('Delete this note?')">
+              <button class="btn danger" type="submit">Delete</button>
+            </form>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% else %}
+    <div class="card">
+      <div class="muted">No notes yet. Click "New Note" to create one.</div>
+    </div>
+  {% endif %}
+{% endblock %}
+
+

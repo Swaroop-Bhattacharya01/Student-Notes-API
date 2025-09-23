@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Student Notes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v={{ asset_version }}">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a class="brand" href="/">
+          <img src="{{ url_for('static', filename='logo.svg') }}?v={{ asset_version }}" alt="logo"/>
+          <span>Student Notes</span>
+        </a>
+        <div style="flex:1"></div>
+        <a class="btn" href="/new">New Note</a>
+      </nav>
+    </header>
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+  </body>
+  </html>
+
+

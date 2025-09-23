@@ -1,0 +1,43 @@
+[
+  {
+    "id": 1,
+    "title": "oops",
+    "content": "this is the first notes",
+    "tags": []
+  },
+  {
+    "id": 2,
+    "title": "skills needed for web development",
+    "content": "this contains the skills a person needs to become a web develper and a road map",
+    "tags": [
+      "learning"
+    ],
+    "attachments": [
+      {
+        "original": "Screenshot 2025-06-27 121747.png",
+        "file": "e3295cd47b4a4c94a0ce4dc8eb2074c8_Screenshot_2025-06-27_121747.png",
+        "mimetype": "image/png"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "coa",
+    "content": "these are the ntoes for coa unit 1 and 2",
+    "tags": [
+      "learning"
+    ],
+    "attachments": [
+      {
+        "original": "Unit2_COA__.pptx",
+        "file": "5ab06a56b18d4686a1a5a019329e88fb_Unit2_COA__.pptx",
+        "mimetype": "application/vnd.openxmlformats-officedocument.presentationml.presentation"
+      },
+      {
+        "original": "Unit_1_COA.pptx",
+        "file": "ca069012ee704fb493ce1a432794046c_Unit_1_COA.pptx",
+        "mimetype": "application/vnd.openxmlformats-officedocument.presentationml.presentation"
+      }
+    ]
+  }
+]
