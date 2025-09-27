@@ -151,8 +151,6 @@ python-json-logger==3.3.0
 python-slugify==8.0.4
 python-socketio==5.13.0
 pytz==2024.2
-
-pywinpty==2.0.15
 PyYAML==6.0.2
 pyzmq==26.3.0
 rasterio==1.4.3
